@@ -87,7 +87,7 @@ export function Select({ className, children, ...props }: React.SelectHTMLAttrib
     <div className="relative inline-block w-full">
       <select
         className={cn(
-          "h-11 w-full appearance-none rounded-full border border-border bg-card ps-4 pe-10 text-sm font-medium text-foreground outline-none focus:border-primary",
+          "h-9 w-full appearance-none rounded-[var(--radius-md)] border border-border bg-card ps-3 pe-10 text-sm font-medium text-foreground outline-none focus:border-primary",
           className,
         )}
         {...props}
@@ -151,13 +151,13 @@ export function Tabs({
   const [active, setActive] = React.useState(defaultTab ?? tabs[0]?.id);
   return (
     <div>
-      <div className="inline-flex gap-1 rounded-full bg-muted p-1">
+      <div className="inline-flex gap-1 rounded-[var(--radius-md)] bg-muted p-1">
         {tabs.map((t) => (
           <button
             key={t.id}
             onClick={() => setActive(t.id)}
             className={cn(
-              "rounded-full px-4 py-1.5 text-sm font-bold transition-colors",
+              "rounded-[var(--radius-sm)] px-3.5 py-1.5 text-sm font-semibold transition-colors",
               active === t.id ? "bg-card text-foreground" : "text-muted-foreground hover:text-foreground",
             )}
           >
@@ -185,7 +185,7 @@ export function Pagination({
     <div className="flex items-center gap-1">
       <button
         onClick={() => go(page - 1)}
-        className="grid h-9 w-9 place-items-center rounded-full border border-border text-muted-foreground hover:text-foreground disabled:opacity-40"
+        className="grid h-9 w-9 place-items-center rounded-[var(--radius-md)] border border-border text-muted-foreground hover:text-foreground disabled:opacity-40"
         disabled={page <= 1}
         aria-label="Previous"
       >
@@ -196,7 +196,7 @@ export function Pagination({
           key={i}
           onClick={() => go(i + 1)}
           className={cn(
-            "h-9 w-9 rounded-full text-sm font-bold",
+            "h-9 w-9 rounded-[var(--radius-md)] text-sm font-semibold",
             page === i + 1 ? "bg-primary text-primary-foreground" : "border border-border text-muted-foreground hover:text-foreground",
           )}
         >
@@ -205,7 +205,7 @@ export function Pagination({
       ))}
       <button
         onClick={() => go(page + 1)}
-        className="grid h-9 w-9 place-items-center rounded-full border border-border text-muted-foreground hover:text-foreground disabled:opacity-40"
+        className="grid h-9 w-9 place-items-center rounded-[var(--radius-md)] border border-border text-muted-foreground hover:text-foreground disabled:opacity-40"
         disabled={page >= total}
         aria-label="Next"
       >

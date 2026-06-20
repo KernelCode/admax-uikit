@@ -6,7 +6,7 @@ export const Input = React.forwardRef<HTMLInputElement, React.InputHTMLAttribute
     <input
       ref={ref}
       className={cn(
-        "h-11 w-full rounded-full border border-transparent bg-muted px-4 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-primary focus:bg-card",
+        "h-9 w-full rounded-[var(--radius-md)] border border-border bg-card px-3 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-primary focus:ring-2 focus:ring-primary/15",
         className,
       )}
       {...props}
@@ -24,7 +24,7 @@ export const SearchInput = React.forwardRef<
     <input
       ref={ref}
       className={cn(
-        "h-11 w-full rounded-full border border-transparent bg-muted ps-4 pe-11 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-primary focus:bg-card",
+        "h-9 w-full rounded-[var(--radius-md)] border border-border bg-card ps-3 pe-10 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-primary focus:ring-2 focus:ring-primary/15",
         className,
       )}
       {...props}

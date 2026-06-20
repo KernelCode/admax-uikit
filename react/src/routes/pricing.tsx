@@ -35,7 +35,7 @@ export function Pricing() {
               )}
             >
               {popular && (
-                <span className="absolute -top-3 start-1/2 -translate-x-1/2 rounded-full brand-fill px-3 py-1 text-xs font-bold text-[#1d2231] rtl:translate-x-1/2">
+                <span className="absolute -top-3 start-1/2 -translate-x-1/2 rounded-[var(--radius-sm)] brand-fill px-3 py-1 text-xs font-bold text-white rtl:translate-x-1/2">
                   {t.pricing.mostPopular}
                 </span>
               )}

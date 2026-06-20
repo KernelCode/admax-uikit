@@ -102,10 +102,10 @@ export function Social() {
         {/* feed */}
         <div className="space-y-3">
           <div className="flex items-center justify-end gap-2">
-            <button className="grid h-11 w-11 place-items-center rounded-full bg-card border border-border">
+            <button className="grid h-9 w-9 place-items-center rounded-[var(--radius-md)] bg-card border border-border">
               <SlidersHorizontal className="h-4 w-4 text-muted-foreground" />
             </button>
-            <button className="inline-flex h-11 items-center gap-2 rounded-full bg-card px-4 text-sm font-bold border border-border">
+            <button className="inline-flex h-9 items-center gap-2 rounded-[var(--radius-md)] bg-card px-3.5 text-sm font-semibold border border-border hover:bg-muted">
               {c.newest}
               <ChevronDown className="h-4 w-4 text-muted-foreground" />
             </button>
@@ -115,7 +115,7 @@ export function Social() {
             <Card key={i} className="p-4">
               <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
                 <div className="min-w-0">
-                  <span className="rounded-full bg-soft px-2 py-0.5 text-xs font-bold text-[color:var(--color-soft-foreground)]">
+                  <span className="rounded-[var(--radius-sm)] bg-soft px-2 py-0.5 text-xs font-bold text-[color:var(--color-soft-foreground)]">
                     #AD-00124{i + 1}
                   </span>
                   <div className="mt-2 truncate font-display font-bold">{t.social.adTitle}</div>

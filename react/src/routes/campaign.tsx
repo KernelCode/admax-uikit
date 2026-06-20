@@ -34,7 +34,7 @@ export function Campaign() {
         subtitle={t.campaign.subtitle}
         actions={
           <>
-            <button className="inline-flex h-11 items-center gap-2 rounded-full bg-card px-4 text-sm font-bold border border-border">
+            <button className="inline-flex h-9 items-center gap-2 rounded-[var(--radius-md)] bg-card px-3.5 text-sm font-semibold border border-border hover:bg-muted">
               {c.newest}
               <ChevronDown className="h-4 w-4 text-muted-foreground" />
             </button>
@@ -55,7 +55,7 @@ export function Campaign() {
               <div className="flex flex-col gap-4 lg:flex-row lg:items-center">
                 {/* identity */}
                 <div className="min-w-0 lg:w-72">
-                  <span className="rounded-full bg-soft px-2 py-0.5 text-xs font-bold text-[color:var(--color-soft-foreground)]">
+                  <span className="rounded-[var(--radius-sm)] bg-soft px-2 py-0.5 text-xs font-bold text-[color:var(--color-soft-foreground)]">
                     {item.id}
                   </span>
                   <div className="mt-2 truncate font-display font-bold">{item.name}</div>
@@ -107,13 +107,13 @@ export function Campaign() {
                     {status === "running" ? c.running : status === "paused" ? c.paused : c.expired}
                   </StatusPill>
                   <div className="flex items-center gap-1">
-                    <button className="grid h-9 w-9 place-items-center rounded-full bg-muted text-muted-foreground hover:text-foreground" aria-label="Play">
+                    <button className="grid h-9 w-9 place-items-center rounded-[var(--radius-md)] bg-muted text-muted-foreground hover:text-foreground" aria-label="Play">
                       <Play className="h-4 w-4" />
                     </button>
-                    <button className="grid h-9 w-9 place-items-center rounded-full bg-muted text-muted-foreground hover:text-foreground" aria-label="Pause">
+                    <button className="grid h-9 w-9 place-items-center rounded-[var(--radius-md)] bg-muted text-muted-foreground hover:text-foreground" aria-label="Pause">
                       <Pause className="h-4 w-4" />
                     </button>
-                    <button className="grid h-9 w-9 place-items-center rounded-full bg-muted text-muted-foreground hover:text-foreground" aria-label="Stop">
+                    <button className="grid h-9 w-9 place-items-center rounded-[var(--radius-md)] bg-muted text-muted-foreground hover:text-foreground" aria-label="Stop">
                       <Square className="h-4 w-4" />
                     </button>
                   </div>

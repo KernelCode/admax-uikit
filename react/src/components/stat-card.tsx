@@ -31,7 +31,7 @@ export function StatCard({
           <div className="mt-0.5 truncate text-sm text-muted-foreground">{label}</div>
         </div>
         {icon && (
-          <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-soft text-[color:var(--color-soft-foreground)]">
+          <span className="grid h-10 w-10 shrink-0 place-items-center rounded-[var(--radius-md)] bg-soft text-[color:var(--color-soft-foreground)]">
             {icon}
           </span>
         )}
@@ -40,7 +40,7 @@ export function StatCard({
         {typeof delta === "number" && (
           <span
             className={cn(
-              "inline-flex items-center gap-0.5 rounded-full px-2 py-0.5 text-xs font-bold",
+              "inline-flex items-center gap-0.5 rounded-[var(--radius-sm)] px-2 py-0.5 text-xs font-bold",
               up ? "bg-success/15 text-success" : "bg-danger/15 text-danger",
             )}
           >

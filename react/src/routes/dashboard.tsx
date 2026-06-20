@@ -79,7 +79,7 @@ export function Dashboard() {
         title={t.dash.title}
         subtitle={t.dash.subtitle}
         actions={
-          <button className="inline-flex h-11 items-center gap-2 rounded-full bg-brand-400 px-4 text-sm font-bold text-[#1d2231]">
+          <button className="inline-flex h-9 items-center gap-2 rounded-[var(--radius-md)] bg-brand-400 px-3.5 text-sm font-semibold text-[#1d2231] hover:bg-brand-500">
             {c.thisMonth}
             <ChevronDown className="h-4 w-4" />
           </button>
@@ -129,7 +129,7 @@ export function Dashboard() {
             <div className="p-5 ps-7 text-ink-foreground">
               <div className="flex items-center justify-between gap-2 text-sm font-medium opacity-90">
                 {t.dash.spendsYesterday}
-                <span className="rounded-full bg-white/10 px-2 py-0.5 text-xs">+6%</span>
+                <span className="rounded-[var(--radius-sm)] bg-white/10 px-2 py-0.5 text-xs">+6%</span>
               </div>
               <div className="mt-1 font-display text-3xl font-extrabold">$953.55</div>
               <Sparkline data={spend} color="#ffffff" area={false} className="mt-2 opacity-80" />
@@ -220,7 +220,7 @@ export function Dashboard() {
               { name: "Twitter", value: "2,512k", up: -2, color: "var(--color-brand-400)" },
             ].map((s) => (
               <div key={s.name} className="flex items-center gap-3 rounded-[var(--radius-md)] bg-muted/50 p-3">
-                <span className="h-9 w-9 shrink-0 rounded-full" style={{ background: s.color }} />
+                <span className="h-9 w-9 shrink-0 rounded-[var(--radius-md)]" style={{ background: s.color }} />
                 <div className="min-w-0 flex-1">
                   <div className="text-sm font-bold">{s.name}</div>
                   <div className="text-xs text-muted-foreground">{s.value} {c.engagement}</div>
@@ -292,7 +292,7 @@ export function Dashboard() {
           <div className="space-y-3">
             {t.campaign.items.slice(0, 3).map((item) => (
               <div key={item.id} className="flex items-center gap-3">
-                <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-soft text-[color:var(--color-soft-foreground)]">
+                <span className="grid h-9 w-9 shrink-0 place-items-center rounded-[var(--radius-md)] bg-soft text-[color:var(--color-soft-foreground)]">
                   <Flame className="h-4 w-4" />
                 </span>
                 <div className="min-w-0 flex-1">
