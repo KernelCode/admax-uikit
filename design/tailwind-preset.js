@@ -1,4 +1,4 @@
-/** Tayang — Tailwind v3 compatibility preset. v4 users prefer design/theme.css. */
+/** Admax — Tailwind v3 compatibility preset. v4 users prefer design/theme.css. */
 module.exports = {
   theme: {
     extend: {

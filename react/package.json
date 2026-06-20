@@ -1,9 +1,9 @@
 {
-  "name": "tayang-uikit-react",
+  "name": "admax-uikit-react",
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "Tayang — runnable React + Vite ads-campaign-manager admin kit. Dashboard-first, campaign + social pages, and a component showcase.",
+  "description": "Admax — runnable React + Vite ads-campaign-manager admin kit. Dashboard-first, campaign + social pages, and a component showcase.",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

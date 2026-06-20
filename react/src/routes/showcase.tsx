@@ -96,7 +96,7 @@ export function Showcase() {
           <div className="flex flex-wrap items-center gap-5">
             <Avatar name="Louis Anderson" online />
             <Avatar name="Sara Khan" />
-            <Avatar name="Tayang Team" size={56} online />
+            <Avatar name="Admax Team" size={56} online />
             <div className="flex items-center gap-3">
               <Switch defaultChecked aria-label="on" />
               <Switch aria-label="off" />

@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-**Tayang** — a finished, dashboard-first ads-campaign-manager UI kit (built on the
+**Admax** — a finished, dashboard-first ads-campaign-manager UI kit (built on the
 uikit.studio BASE canvas). Read [`AGENTS.md`](./AGENTS.md) for the full map.
 
 - **Truly flat:** no gradients, no box shadows. Separation = borders + fills.

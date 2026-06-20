@@ -1,7 +1,7 @@
 import type { Dict } from "./en";
 
 export const ar: Dict = {
-  brand: "تَيَانغ",
+  brand: "أدماكس",
   tagline: "مدير الحملات الإعلانية",
   nav: {
     mainMenu: "القائمة الرئيسية",
@@ -16,7 +16,7 @@ export const ar: Dict = {
     messages: "الرسائل",
     settings: "الإعدادات",
     new: "جديد",
-    footer: "تَيَانغ لإدارة الحملات الإعلانية",
+    footer: "أدماكس لإدارة الحملات الإعلانية",
     rights: "© 2026 جميع الحقوق محفوظة",
   },
   topbar: {
@@ -127,7 +127,7 @@ export const ar: Dict = {
   },
   components: {
     title: "المكوّنات",
-    subtitle: "كل لبنات تَيَانغ — الأزرار والشارات والحقول والبطاقات والمخططات والرموز.",
+    subtitle: "كل لبنات أدماكس — الأزرار والشارات والحقول والبطاقات والمخططات والرموز.",
     sections: {
       buttons: "الأزرار",
       badges: "الشارات والحالات",

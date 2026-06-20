@@ -1,5 +1,5 @@
 /**
- * TAYANG — an ads-campaign-manager admin kit.
+ * ADMAX — an ads-campaign-manager admin kit.
  * Sunny amber→orange brand, candy status colors (green = running/income,
  * red = paused/expense, slate = expired), warm off-white canvas, pure-white
  * cards with soft diffuse shadows, big friendly radii. Light + dark + RTL.
@@ -48,12 +48,12 @@
   --color-info: #4c6ef5; /* charts */
   --color-grape: #845ef7; /* charts */
 
-  /* Radius — big + friendly. */
-  --radius-sm: 0.625rem;
-  --radius-md: 0.875rem;
-  --radius: 1rem;
-  --radius-lg: 1.375rem;
-  --radius-xl: 1.875rem;
+  /* Radius — tighter, like the source mockups. */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.625rem;
+  --radius: 0.75rem;
+  --radius-lg: 0.875rem;
+  --radius-xl: 1.125rem;
 
   /* Truly flat — no box shadows. Separation comes from borders + fills. */
   --shadow-card: none;

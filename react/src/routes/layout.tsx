@@ -27,7 +27,7 @@ function Wordmark({ compact }: { compact?: boolean }) {
   return (
     <div className="flex items-center gap-2.5">
       <span className="grid h-10 w-10 place-items-center rounded-[var(--radius-md)] brand-fill font-display text-xl font-extrabold text-white">
-        t
+        a
       </span>
       {!compact && (
         <span className="leading-tight">
@@ -74,13 +74,13 @@ function IconBtn({
 export function Layout() {
   const { t, lang, setLang } = useI18n();
   const [dark, setDark] = useState(() =>
-    typeof localStorage !== "undefined" ? localStorage.getItem("tayang-theme") === "dark" : false,
+    typeof localStorage !== "undefined" ? localStorage.getItem("admax-theme") === "dark" : false,
   );
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", dark);
-    localStorage.setItem("tayang-theme", dark ? "dark" : "light");
+    localStorage.setItem("admax-theme", dark ? "dark" : "light");
   }, [dark]);
 
   const mainNav = [

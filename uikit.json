@@ -1,14 +1,14 @@
 {
   "$schema": "https://uikit.dev/schema/v1.json",
   "manifestVersion": 1,
-  "id": "tayang",
-  "name": "Tayang",
+  "id": "admax",
+  "name": "Admax",
   "version": "1.0.0",
-  "description": "Tayang — a dashboard-first ads campaign manager admin kit. Sunny amber/gold brand, orange accent, candy status colors, big friendly radii, soft shadows. Dashboard, campaign list, social network grid, pricing and a components showcase. EN/AR + full RTL, light + dark.",
+  "description": "Admax — a dashboard-first ads campaign manager admin kit. Sunny amber/gold brand, orange accent, candy status colors, big friendly radii, soft shadows. Dashboard, campaign list, social network grid, pricing and a components showcase. EN/AR + full RTL, light + dark.",
   "author": { "name": "Abdullah Al-taheri", "github": "KernelCode", "url": "https://altaheri.me" },
   "license": "MIT",
-  "homepage": "https://github.com/KernelCode/tayang-uikit",
-  "repository": "https://github.com/KernelCode/tayang-uikit",
+  "homepage": "https://github.com/KernelCode/admax-uikit",
+  "repository": "https://github.com/KernelCode/admax-uikit",
 
   "categories": ["dashboard", "admin", "analytics"],
   "tags": ["dashboard", "admin", "ads", "campaign", "analytics", "amber", "arabic", "rtl"],
@@ -62,7 +62,7 @@
   },
 
   "media": {
-    "demoUrl": "https://github.com/KernelCode/tayang-uikit",
+    "demoUrl": "https://github.com/KernelCode/admax-uikit",
     "screenshots": [
       { "kind": "dashboard", "src": "screenshots/dashboard.png" },
       { "kind": "components", "src": "screenshots/components.png" }
@@ -70,7 +70,7 @@
   },
 
   "registry": {
-    "install": "npx uikit-cli new https://github.com/KernelCode/tayang-uikit my-app",
+    "install": "npx uikit-cli new https://github.com/KernelCode/admax-uikit my-app",
     "components": "registry/index.json"
   }
 }

@@ -98,7 +98,7 @@ export function Campaign() {
                   className="hidden items-center gap-1.5 truncate text-xs font-medium text-muted-foreground hover:text-foreground xl:flex"
                 >
                   <Link2 className="h-3.5 w-3.5" />
-                  https://tayang.io/campaign...
+                  https://admax.io/campaign...
                 </a>
 
                 {/* status + controls */}

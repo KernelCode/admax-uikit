@@ -1,5 +1,5 @@
 export const en = {
-  brand: "tayang",
+  brand: "admax",
   tagline: "Ads Campaign Manager",
   nav: {
     mainMenu: "Main Menu",
@@ -14,7 +14,7 @@ export const en = {
     messages: "Messages",
     settings: "Settings",
     new: "New",
-    footer: "Tayang Ads Campaign Manager",
+    footer: "Admax Ads Campaign Manager",
     rights: "© 2026 All Rights Reserved",
   },
   topbar: {
@@ -125,7 +125,7 @@ export const en = {
   },
   components: {
     title: "Components",
-    subtitle: "Every Tayang building block — buttons, badges, inputs, cards, charts and tokens.",
+    subtitle: "Every Admax building block — buttons, badges, inputs, cards, charts and tokens.",
     sections: {
       buttons: "Buttons",
       badges: "Badges & status",

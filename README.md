@@ -1,4 +1,4 @@
-# Tayang — Ads Campaign Manager UI Kit
+# Admax — Ads Campaign Manager UI Kit
 
 A **dashboard-first**, production-grade admin kit for ad-campaign tooling. Sunny
 amber/gold brand, an orange "spends" accent, candy status colors (green = running

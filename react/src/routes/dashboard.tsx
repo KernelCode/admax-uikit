@@ -1,4 +1,4 @@
-import { ChevronDown, Flame, MoreHorizontal, TrendingUp, Users, Wallet } from "lucide-react";
+import { ChevronDown, ChevronUp, Flame, MoreHorizontal, TrendingUp, Users } from "lucide-react";
 import { Badge } from "../components/badge";
 import { Button } from "../components/button";
 import { Card } from "../components/card";
@@ -21,8 +21,35 @@ const bars = [
   { value: 48, up: true },
 ];
 
+/** White progress ring with a centred up-arrow + delta label (spends banner). */
+function SpendsRing({ pct, label }: { pct: number; label: string }) {
+  const r = 22;
+  const circ = 2 * Math.PI * r;
+  return (
+    <div className="relative grid h-16 w-16 shrink-0 place-items-center">
+      <svg viewBox="0 0 56 56" className="h-16 w-16 -rotate-90">
+        <circle cx="28" cy="28" r={r} fill="none" stroke="white" strokeOpacity="0.3" strokeWidth="4" />
+        <circle
+          cx="28"
+          cy="28"
+          r={r}
+          fill="none"
+          stroke="white"
+          strokeWidth="4"
+          strokeLinecap="round"
+          strokeDasharray={`${(pct / 100) * circ} ${circ}`}
+        />
+      </svg>
+      <div className="absolute flex flex-col items-center leading-none">
+        <ChevronUp className="h-4 w-4" />
+        <span className="text-[10px] font-bold">{label}</span>
+      </div>
+    </div>
+  );
+}
+
 export function Dashboard() {
-  const { t } = useI18n();
+  const { t, dir } = useI18n();
   const c = t.common;
 
   return (
@@ -55,27 +82,35 @@ export function Dashboard() {
           color="var(--color-brand-400)"
           icon={<Users className="h-5 w-5" />}
         />
-        {/* Spends today / yesterday — the signature orange + slate banner */}
-        <Card className="overflow-hidden p-0 lg:col-span-2">
-          <div className="grid h-full grid-cols-2">
-            <div className="bg-accent p-5 text-white">
-              <div className="flex items-center gap-2 text-sm/none font-semibold opacity-90">
-                <span className="grid h-9 w-9 place-items-center rounded-full bg-white/20">
-                  <Wallet className="h-4 w-4" />
-                </span>
-                {t.dash.spendsToday}
-              </div>
-              <div className="mt-4 font-display text-3xl font-extrabold">$5,245</div>
-              <div className="mt-1 inline-flex items-center gap-1 text-xs font-semibold opacity-90">
-                <TrendingUp className="h-3.5 w-3.5" /> +5% {c.thanLastWeek}
+        {/* Spends today / yesterday — orange + slate banner with a diagonal seam */}
+        <Card className="relative overflow-hidden p-0 lg:col-span-2">
+          <div className="absolute inset-0 bg-ink" />
+          <div
+            className="absolute inset-y-0 start-0 w-[60%] bg-accent"
+            style={{
+              clipPath:
+                dir === "rtl"
+                  ? "polygon(34px 0, 100% 0, 100% 100%, 0 100%)"
+                  : "polygon(0 0, calc(100% - 34px) 0, 100% 100%, 0 100%)",
+            }}
+          />
+          <div className="relative grid h-full grid-cols-[58%_42%]">
+            <div className="flex items-center gap-4 p-5 text-white">
+              <SpendsRing pct={72} label="+5%" />
+              <div>
+                <div className="text-sm font-medium opacity-90">{t.dash.spendsToday}</div>
+                <div className="mt-1 font-display text-3xl font-extrabold">$5,245</div>
+                <div className="mt-1 inline-flex items-center gap-1 text-xs font-semibold opacity-90">
+                  <TrendingUp className="h-3.5 w-3.5" /> +5% {c.thanLastWeek}
+                </div>
               </div>
             </div>
-            <div className="bg-ink p-5 text-ink-foreground">
-              <div className="flex items-center justify-between text-sm font-semibold opacity-90">
+            <div className="p-5 ps-7 text-ink-foreground">
+              <div className="flex items-center justify-between gap-2 text-sm font-medium opacity-90">
                 {t.dash.spendsYesterday}
                 <span className="rounded-full bg-white/10 px-2 py-0.5 text-xs">+6%</span>
               </div>
-              <div className="mt-4 font-display text-3xl font-extrabold">$953.55</div>
+              <div className="mt-1 font-display text-3xl font-extrabold">$953.55</div>
               <Sparkline data={spend} color="#ffffff" area={false} className="mt-2 opacity-80" />
             </div>
           </div>

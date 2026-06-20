@@ -1,4 +1,4 @@
-# Tayang — Ads Campaign Manager UI Kit
+# Admax — Ads Campaign Manager UI Kit
 
 > A dashboard-first, production-grade admin kit for ad-campaign tooling. Truly flat
 > design (no gradients, no shadows): sunny amber/gold brand, orange "spends"

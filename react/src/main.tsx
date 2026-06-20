@@ -24,8 +24,8 @@ const router = createBrowserRouter(
       ],
     },
   ],
-  // Works at "/" in dev and under any subpath (e.g. /demos/tayang/) when built
-  // with `vite build --base=/demos/tayang/`.
+  // Works at "/" in dev and under any subpath (e.g. /demos/admax/) when built
+  // with `vite build --base=/demos/admax/`.
   { basename: import.meta.env.BASE_URL },
 );
 

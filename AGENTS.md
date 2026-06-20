@@ -1,4 +1,4 @@
-# AGENTS.md — Tayang Ads Campaign Manager kit
+# AGENTS.md — Admax Ads Campaign Manager kit
 
 A finished, **dashboard-first** admin kit for ad-campaign tooling, built on the
 uikit.studio BASE canvas. Truly **flat** design — no gradients, no box shadows;
