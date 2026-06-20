@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750" role="img" aria-label="base canvas">
+  <rect width="1200" height="750" fill="#ffffff"/>
+  <text x="80" y="160" font-family="monospace" font-size="20" fill="#6b6b7b">// base canvas — build your kit here</text>
+  <rect x="80" y="300" width="520" height="40" rx="8" fill="#14141a"/>
+  <rect x="80" y="360" width="360" height="20" rx="6" fill="#b9b9c3"/>
+  <rect x="80" y="420" width="150" height="44" rx="22" fill="#14141a"/>
+</svg>

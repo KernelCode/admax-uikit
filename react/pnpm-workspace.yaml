@@ -1,0 +1,8 @@
+# Single-package repo. Declares which dependency build scripts are allowed to run
+# (esbuild + Tailwind's native oxide binary) so `pnpm install` works without prompts.
+packages:
+  - .
+
+allowBuilds:
+  esbuild: true
+  "@tailwindcss/oxide": true

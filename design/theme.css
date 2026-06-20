@@ -1,0 +1,116 @@
+/**
+ * TAYANG — an ads-campaign-manager admin kit.
+ * Sunny amber→orange brand, candy status colors (green = running/income,
+ * red = paused/expense, slate = expired), warm off-white canvas, pure-white
+ * cards with soft diffuse shadows, big friendly radii. Light + dark + RTL.
+ */
+@theme {
+  --font-display: "Plus Jakarta Sans", "Poppins", system-ui, sans-serif;
+  --font-sans: "Plus Jakarta Sans", "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Brand — sunny amber/gold, flat (no gradient). */
+  --color-brand-50: #fff8e6;
+  --color-brand-100: #ffefc2;
+  --color-brand-200: #ffe095;
+  --color-brand-300: #ffcd55;
+  --color-brand-400: #fbb828;
+  --color-brand-500: #f59e0b;
+  --color-brand-600: #e2820a;
+  --color-brand-700: #b9650a;
+  --color-brand-800: #934f0e;
+  --color-brand-900: #78410f;
+
+  /* Light theme */
+  --color-background: #f5f6f8;
+  --color-foreground: #1d2231;
+  --color-card: #ffffff;
+  --color-muted: #eef0f4;
+  --color-muted-foreground: #8a92a6;
+  --color-border: #e9ecf2;
+  --color-primary: #f59e0b;
+  --color-primary-foreground: #1d2231;
+
+  /* Warm/cream highlight used by the active sidebar pill + soft chips. */
+  --color-soft: #fff4d6;
+  --color-soft-foreground: #b9650a;
+
+  --color-ink: #1d2231; /* dark panels on a light page */
+  --color-ink-foreground: #ffffff;
+  --color-mark: #ffe095;
+  --color-mark-foreground: #1d2231;
+
+  /* Status / data accents (shared across light + dark). */
+  --color-accent: #ff7a45; /* orange — "spends today" banner */
+  --color-accent-foreground: #ffffff;
+  --color-success: #22c55e; /* running / income */
+  --color-danger: #f7585b; /* paused / expense */
+  --color-info: #4c6ef5; /* charts */
+  --color-grape: #845ef7; /* charts */
+
+  /* Radius — big + friendly. */
+  --radius-sm: 0.625rem;
+  --radius-md: 0.875rem;
+  --radius: 1rem;
+  --radius-lg: 1.375rem;
+  --radius-xl: 1.875rem;
+
+  /* Truly flat — no box shadows. Separation comes from borders + fills. */
+  --shadow-card: none;
+  --shadow-soft: none;
+  --shadow-pop: none;
+}
+
+@layer base {
+  .dark {
+    --color-background: #0f1117;
+    --color-foreground: #eef1f7;
+    --color-card: #181b23;
+    --color-muted: #20242e;
+    --color-muted-foreground: #8b93a7;
+    --color-border: #272c38;
+    --color-primary: #fbb828;
+    --color-primary-foreground: #1d2231;
+
+    --color-soft: #2a2415;
+    --color-soft-foreground: #ffcd55;
+
+    --color-ink: #060709;
+    --color-ink-foreground: #eef1f7;
+    --color-mark: #4a3c12;
+    --color-mark-foreground: #ffefc2;
+  }
+
+  /* Arabic face — Cairo pairs well with the rounded Latin display. */
+  [dir="rtl"] {
+    --font-display: "Cairo", "Plus Jakarta Sans", sans-serif;
+    --font-sans: "Cairo", "Plus Jakarta Sans", sans-serif;
+  }
+
+  html {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* Flat brand fill used by the logo tile + key actions (no gradient). */
+@utility brand-fill {
+  background-color: var(--color-brand-400);
+}
+
+@utility mark {
+  background-color: var(--color-mark);
+  color: var(--color-mark-foreground);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  padding: 0 0.18em;
+}
+
+/* Thin custom scrollbar for the app shell. */
+@layer base {
+  .scroll-slim::-webkit-scrollbar { width: 8px; height: 8px; }
+  .scroll-slim::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 9999px; }
+  .scroll-slim::-webkit-scrollbar-track { background: transparent; }
+}
