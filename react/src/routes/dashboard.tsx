@@ -1,11 +1,16 @@
-import { ChevronDown, ChevronUp, Flame, MoreHorizontal, TrendingUp, Users } from "lucide-react";
+import { ChevronDown, ChevronUp, Flame, MoreHorizontal, Search, TrendingUp, Users } from "lucide-react";
+import { useMemo, useState } from "react";
 import { Badge } from "../components/badge";
 import { Button } from "../components/button";
 import { Card } from "../components/card";
 import { BarsChart, Donut, LineChart, Sparkline } from "../components/charts";
+import { SearchInput } from "../components/input";
 import { PageHeader } from "../components/page-header";
+import { Pagination } from "../components/primitives";
 import { StatCard } from "../components/stat-card";
+import { Table, TBody, TD, TH, THead, TR } from "../components/table";
 import { useI18n } from "../i18n";
+import { cn } from "../lib/cn";
 
 const spend = [12, 18, 14, 22, 19, 28, 24, 32];
 const income = [18, 16, 22, 20, 26, 24, 30, 34];
@@ -20,6 +25,16 @@ const bars = [
   { value: 70, up: true },
   { value: 48, up: true },
 ];
+
+const spendingRows = [
+  { id: "#AD-001234", date: "Mar 05, 2026", yesterday: 664.75, today: 165.07, total: 872.33, remaining: 955.68, up: true },
+  { id: "#AD-001235", date: "Feb 29, 2026", yesterday: 534.68, today: 264.5, total: 964.39, remaining: 419.86, up: true },
+  { id: "#AD-001236", date: "Jan 23, 2026", yesterday: 570.97, today: 179.76, total: 226.39, remaining: 686.61, up: false },
+  { id: "#AD-001237", date: "Jan 19, 2026", yesterday: 295.76, today: 532.64, total: 476.6, remaining: 201.28, up: true },
+  { id: "#AD-001238", date: "Jan 12, 2026", yesterday: 411.32, today: 82.29, total: 612.4, remaining: 320.14, up: false },
+];
+const trendUp = [10, 14, 11, 18, 15, 22];
+const trendDown = [22, 16, 18, 12, 14, 9];
 
 /** White progress ring with a centred up-arrow + delta label (spends banner). */
 function SpendsRing({ pct, label }: { pct: number; label: string }) {
@@ -51,6 +66,12 @@ function SpendsRing({ pct, label }: { pct: number; label: string }) {
 export function Dashboard() {
   const { t, dir } = useI18n();
   const c = t.common;
+  const [sortDesc, setSortDesc] = useState(true);
+  const [page, setPage] = useState(1);
+  const sortedSpending = useMemo(
+    () => [...spendingRows].sort((a, b) => (sortDesc ? b.total - a.total : a.total - b.total)),
+    [sortDesc],
+  );
 
   return (
     <>
@@ -284,6 +305,68 @@ export function Dashboard() {
           </div>
         </Card>
       </div>
+
+      {/* Spending list — a real, sortable data table (ref: Spending List) */}
+      <Card className="mt-4 p-5">
+        <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+          <h3 className="font-display text-base font-bold">{t.spending.title}</h3>
+          <div className="flex items-center gap-2">
+            <div className="hidden w-56 sm:block">
+              <SearchInput placeholder={t.topbar.search} icon={<Search className="h-[18px] w-[18px]" />} />
+            </div>
+            <Button variant="soft" size="sm">
+              {c.downloadCsv}
+            </Button>
+          </div>
+        </div>
+        <Table>
+          <THead>
+            <TR className="border-b">
+              <TH>{t.spending.cols.adId}</TH>
+              <TH>{t.spending.cols.date}</TH>
+              <TH className="text-end">{t.spending.cols.yesterday}</TH>
+              <TH className="text-end">{t.spending.cols.today}</TH>
+              <TH
+                className="text-end"
+                sortable
+                sort={sortDesc ? "desc" : "asc"}
+                onSort={() => setSortDesc((s) => !s)}
+              >
+                {t.spending.cols.total}
+              </TH>
+              <TH className="text-end">{t.spending.cols.remaining}</TH>
+              <TH className="text-end">{t.spending.cols.trend}</TH>
+            </TR>
+          </THead>
+          <TBody>
+            {sortedSpending.map((r) => (
+              <TR key={r.id}>
+                <TD className="font-bold">{r.id}</TD>
+                <TD className="text-muted-foreground">{r.date}</TD>
+                <TD className="text-end tabular-nums">${r.yesterday.toFixed(2)}</TD>
+                <TD className="text-end tabular-nums">${r.today.toFixed(2)}</TD>
+                <TD className="text-end font-bold tabular-nums">${r.total.toFixed(2)}</TD>
+                <TD className={cn("text-end font-bold tabular-nums", r.up ? "text-success" : "text-danger")}>
+                  ${r.remaining.toFixed(2)}
+                </TD>
+                <TD>
+                  <div className="ms-auto w-20">
+                    <Sparkline
+                      data={r.up ? trendUp : trendDown}
+                      color={r.up ? "var(--color-success)" : "var(--color-danger)"}
+                      area={false}
+                    />
+                  </div>
+                </TD>
+              </TR>
+            ))}
+          </TBody>
+        </Table>
+        <div className="mt-4 flex items-center justify-between">
+          <span className="text-sm text-muted-foreground">{sortedSpending.length} rows</span>
+          <Pagination page={page} total={3} onPage={setPage} />
+        </div>
+      </Card>
     </>
   );
 }

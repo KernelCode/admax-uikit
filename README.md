@@ -37,21 +37,62 @@ pnpm typecheck
 
 | File | What |
 | --- | --- |
-| `design/theme.css` | Tailwind v4 tokens — brand scale, light/dark, RTL face, radii, shadows, `brand-gradient` + `mark` utilities |
+| `design/theme.css` | Tailwind v4 tokens — brand scale, light/dark, RTL face, radii, type scale, `brand-fill` + `mark` utilities (flat: `--shadow-*: none`) |
 | `design/tokens.json` | W3C DTCG tokens, kept in sync with `theme.css` |
 | `design/tailwind-preset.js` | Tailwind v3 compatibility preset |
 
-**Brand:** amber `#f59e0b` (gradient `#ffcd55 → #e2820a`). **Accent:** orange
-`#ff7a45`. **Status:** success `#22c55e`, danger `#f7585b`, info `#4c6ef5`,
-grape `#845ef7`. **Type:** Plus Jakarta Sans (display + body), Cairo (Arabic),
-JetBrains Mono.
+This is a **flat** kit: no gradients, no box shadows — separation comes from borders + fills.
+
+### Brand scale
+
+| 50 | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900 |
+|----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
+| `#fff8e6` | `#ffefc2` | `#ffe095` | `#ffcd55` | `#fbb828` | `#f59e0b` | `#e2820a` | `#b9650a` | `#934f0e` | `#78410f` |
+
+### Semantic tokens
+
+| Token | Light | Dark |
+| --- | --- | --- |
+| background | `#f5f6f8` | `#0f1117` |
+| foreground | `#1d2231` | `#eef1f7` |
+| card | `#ffffff` | `#181b23` |
+| muted | `#eef0f4` | `#20242e` |
+| border | `#e9ecf2` | `#272c38` |
+| primary | `#f59e0b` | `#fbb828` |
+| soft (active pill) | `#fff4d6` | `#2a2415` |
+
+### Status / data accents
+
+| accent | success | danger | info | grape |
+| --- | --- | --- | --- | --- |
+| `#ff7a45` | `#22c55e` | `#f7585b` | `#4c6ef5` | `#845ef7` |
+
+### Type scale (`--text-*`)
+
+| display | h1 | h2 | h3 | body | caption |
+| --- | --- | --- | --- | --- | --- |
+| 2.25rem | 1.875rem | 1.5rem | 1.125rem | 0.9375rem | 0.75rem |
+
+Fonts: **Plus Jakarta Sans** (display + body), **Cairo** (Arabic), **JetBrains Mono**.
+
+### Radius (`--radius-*`)
+
+| sm | md | DEFAULT | lg | xl |
+| --- | --- | --- | --- | --- |
+| 0.375rem | 0.625rem | 0.75rem | 0.875rem | 1.125rem |
+
+### Breakpoints (Tailwind)
+
+`sm` 640 · `md` 768 · `lg` 1024 · `xl` 1280 — mobile-first; the sidebar collapses to a drawer below `lg`.
 
 ## Components
 
 `react/src/components/` — `button`, `card`, `input` (+ `SearchInput`), `badge`
-(+ `StatusPill`), `avatar`, `switch`, `stat-card`, `charts` (`Sparkline`,
-`LineChart`, `BarsChart`, `Donut`), `container`, `page-header`. All charts are
-dependency-free inline SVG.
+(+ `StatusPill`), `avatar`, `switch`, `stat-card`, `table` (`Table`/`TH`/`TD` …),
+`charts` (`Sparkline`, `LineChart`, `BarsChart`, `Donut`), and `primitives`
+(`Checkbox`, `RadioGroup`, `Select`, `Textarea`, `Tabs`, `Progress`, `Skeleton`,
+`Tooltip`, `Pagination`), plus `container`, `page-header`. Charts + table are
+dependency-free. Every component is shown in all states on `/components`.
 
 ## License
 

@@ -44,6 +44,8 @@
       { "name": "Switch", "react": "react/src/components/switch.tsx" },
       { "name": "StatCard", "react": "react/src/components/stat-card.tsx" },
       { "name": "Charts", "react": "react/src/components/charts.tsx" },
+      { "name": "Table", "react": "react/src/components/table.tsx" },
+      { "name": "Primitives", "react": "react/src/components/primitives.tsx" },
       { "name": "Container", "react": "react/src/components/container.tsx" }
     ],
     "templates": [
@@ -65,7 +67,7 @@
     "demoUrl": "https://github.com/KernelCode/admax-uikit",
     "screenshots": [
       { "kind": "dashboard", "src": "screenshots/dashboard.png" },
-      { "kind": "components", "src": "screenshots/components.png" }
+      { "kind": "other", "src": "screenshots/components.png" }
     ]
   },
 

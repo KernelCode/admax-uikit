@@ -48,6 +48,14 @@
   --color-info: #4c6ef5; /* charts */
   --color-grape: #845ef7; /* charts */
 
+  /* Type scale (display → caption). Use via text-[length:var(--text-*)]. */
+  --text-display: 2.25rem;
+  --text-h1: 1.875rem;
+  --text-h2: 1.5rem;
+  --text-h3: 1.125rem;
+  --text-body: 0.9375rem;
+  --text-caption: 0.75rem;
+
   /* Radius — tighter, like the source mockups. */
   --radius-sm: 0.375rem;
   --radius-md: 0.625rem;

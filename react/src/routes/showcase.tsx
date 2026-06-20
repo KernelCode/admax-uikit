@@ -1,4 +1,4 @@
-import { Bell, Flame, Search, Users } from "lucide-react";
+import { Bell, Flame, Info, Search, Users } from "lucide-react";
 import * as React from "react";
 import { Avatar } from "../components/avatar";
 import { Badge, StatusPill } from "../components/badge";
@@ -7,8 +7,20 @@ import { Card } from "../components/card";
 import { BarsChart, Donut, LineChart, Sparkline } from "../components/charts";
 import { Input, SearchInput } from "../components/input";
 import { PageHeader } from "../components/page-header";
+import {
+  Checkbox,
+  Pagination,
+  Progress,
+  RadioGroup,
+  Select,
+  Skeleton,
+  Tabs,
+  Textarea,
+  Tooltip,
+} from "../components/primitives";
 import { StatCard } from "../components/stat-card";
 import { Switch } from "../components/switch";
+import { Table, TBody, TD, TH, THead, TR } from "../components/table";
 import { useI18n } from "../i18n";
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
@@ -92,6 +104,33 @@ export function Showcase() {
           </div>
         </Section>
 
+        <Section title={s.forms}>
+          <div className="grid gap-6 md:grid-cols-2">
+            <div className="space-y-4">
+              <Select defaultValue="growth">
+                <option value="starter">Starter</option>
+                <option value="growth">Growth</option>
+                <option value="agency">Agency</option>
+              </Select>
+              <Textarea placeholder="Write a note…" />
+            </div>
+            <div className="space-y-4">
+              <div className="flex flex-col gap-3">
+                <Checkbox label="Email notifications" defaultChecked />
+                <Checkbox label="SMS alerts" />
+              </div>
+              <RadioGroup
+                defaultValue="all"
+                options={[
+                  { label: "All", value: "all" },
+                  { label: "Running", value: "running" },
+                  { label: "Paused", value: "paused" },
+                ]}
+              />
+            </div>
+          </div>
+        </Section>
+
         <Section title={s.avatars}>
           <div className="flex flex-wrap items-center gap-5">
             <Avatar name="Louis Anderson" online />
@@ -160,6 +199,67 @@ export function Showcase() {
                 <p className="mb-2 text-sm font-bold text-muted-foreground">Sparkline</p>
                 <Sparkline data={[8, 14, 10, 18, 13, 22, 17, 26]} className="h-16" strokeWidth={3} />
               </div>
+            </div>
+          </div>
+        </Section>
+
+        <Section title={s.table}>
+          <Table>
+            <THead>
+              <TR className="border-b">
+                <TH>{t.spending.cols.adId}</TH>
+                <TH>{t.spending.cols.date}</TH>
+                <TH className="text-end">{t.spending.cols.total}</TH>
+                <TH>Status</TH>
+              </TR>
+            </THead>
+            <TBody>
+              {t.campaign.items.slice(0, 3).map((row, i) => (
+                <TR key={row.id}>
+                  <TD className="font-bold">{row.id}</TD>
+                  <TD className="text-muted-foreground">January 25, 2026</TD>
+                  <TD className="text-end tabular-nums font-bold">${(872.33 - i * 90).toFixed(2)}</TD>
+                  <TD>
+                    <StatusPill status={row.status as "running" | "paused" | "expired"}>
+                      {row.status === "running" ? t.common.running : row.status === "paused" ? t.common.paused : t.common.expired}
+                    </StatusPill>
+                  </TD>
+                </TR>
+              ))}
+            </TBody>
+          </Table>
+          <div className="mt-4 flex justify-end">
+            <Pagination page={1} total={3} />
+          </div>
+        </Section>
+
+        <Section title={s.feedback}>
+          <div className="space-y-6">
+            <Tabs
+              tabs={[
+                { id: "overview", label: "Overview", content: "Overview tab content." },
+                { id: "activity", label: "Activity", content: "Activity tab content." },
+                { id: "reports", label: "Reports", content: "Reports tab content." },
+              ]}
+            />
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div className="space-y-2">
+                <p className="text-sm font-bold text-muted-foreground">Progress</p>
+                <Progress value={72} />
+                <Progress value={38} />
+              </div>
+              <div className="space-y-2">
+                <p className="text-sm font-bold text-muted-foreground">Skeleton</p>
+                <Skeleton className="h-4 w-full" />
+                <Skeleton className="h-4 w-2/3" />
+              </div>
+            </div>
+            <div className="flex items-center gap-4">
+              <Tooltip label="More info">
+                <span className="inline-flex items-center gap-1.5 text-sm font-bold text-muted-foreground">
+                  <Info className="h-4 w-4" /> Hover me
+                </span>
+              </Tooltip>
             </div>
           </div>
         </Section>
