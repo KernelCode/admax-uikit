@@ -5,72 +5,178 @@
   "name": "Admax",
   "version": "1.0.0",
   "description": "Admax — a dashboard-first ads campaign manager admin kit. Sunny amber/gold brand, orange accent, candy status colors, big friendly radii, soft shadows. Dashboard, campaign list, social network grid, pricing and a components showcase. EN/AR + full RTL, light + dark.",
-  "author": { "name": "Abdullah Al-taheri", "github": "KernelCode", "url": "https://altaheri.me" },
+  "author": {
+    "name": "Abdullah Al-taheri",
+    "github": "KernelCode",
+    "url": "https://altaheri.me"
+  },
   "license": "MIT",
   "homepage": "https://github.com/KernelCode/admax-uikit",
   "repository": "https://github.com/KernelCode/admax-uikit",
-
-  "categories": ["dashboard", "admin", "analytics"],
-  "tags": ["dashboard", "admin", "ads", "campaign", "analytics", "amber", "arabic", "rtl"],
-
+  "categories": [
+    "dashboard",
+    "admin",
+    "analytics"
+  ],
+  "tags": [
+    "dashboard",
+    "admin",
+    "ads",
+    "campaign",
+    "analytics",
+    "amber",
+    "arabic",
+    "rtl"
+  ],
   "tech": {
-    "frameworks": ["react"],
+    "frameworks": [
+      "react"
+    ],
     "styling": "both",
     "tailwindVersion": "^4.0.0",
     "icons": "lucide",
-    "deps": ["class-variance-authority", "clsx", "tailwind-merge"]
+    "deps": [
+      "class-variance-authority",
+      "clsx",
+      "tailwind-merge"
+    ]
   },
-
   "design": {
     "tokens": "design/tokens.json",
     "tailwindPreset": "design/tailwind-preset.js",
     "themeCss": "design/theme.css",
     "fonts": [
-      { "family": "Plus Jakarta Sans", "source": "google" },
-      { "family": "Cairo", "source": "google" },
-      { "family": "JetBrains Mono", "source": "google" }
+      {
+        "family": "Plus Jakarta Sans",
+        "source": "google"
+      },
+      {
+        "family": "Cairo",
+        "source": "google"
+      },
+      {
+        "family": "JetBrains Mono",
+        "source": "google"
+      }
     ],
-    "palettes": [{ "name": "amber", "primary": "#f59e0b" }],
-    "modes": ["light", "dark"]
-  },
-
-  "surface": {
-    "components": [
-      { "name": "Button", "react": "react/src/components/button.tsx" },
-      { "name": "Card", "react": "react/src/components/card.tsx" },
-      { "name": "Input", "react": "react/src/components/input.tsx" },
-      { "name": "Badge", "react": "react/src/components/badge.tsx" },
-      { "name": "Avatar", "react": "react/src/components/avatar.tsx" },
-      { "name": "Switch", "react": "react/src/components/switch.tsx" },
-      { "name": "StatCard", "react": "react/src/components/stat-card.tsx" },
-      { "name": "Charts", "react": "react/src/components/charts.tsx" },
-      { "name": "Table", "react": "react/src/components/table.tsx" },
-      { "name": "Primitives", "react": "react/src/components/primitives.tsx" },
-      { "name": "Container", "react": "react/src/components/container.tsx" }
+    "palettes": [
+      {
+        "name": "amber",
+        "primary": "#f59e0b"
+      }
     ],
-    "templates": [
-      { "name": "Dashboard", "route": "/" },
-      { "name": "Campaign", "route": "/campaign" },
-      { "name": "Social", "route": "/social" },
-      { "name": "Pricing", "route": "/pricing" },
-      { "name": "Showcase", "route": "/components" }
+    "modes": [
+      "light",
+      "dark"
     ]
   },
-
+  "surface": {
+    "components": [
+      {
+        "name": "Button",
+        "react": "react/src/components/button.tsx"
+      },
+      {
+        "name": "Card",
+        "react": "react/src/components/card.tsx"
+      },
+      {
+        "name": "Input",
+        "react": "react/src/components/input.tsx"
+      },
+      {
+        "name": "Badge",
+        "react": "react/src/components/badge.tsx"
+      },
+      {
+        "name": "Avatar",
+        "react": "react/src/components/avatar.tsx"
+      },
+      {
+        "name": "Switch",
+        "react": "react/src/components/switch.tsx"
+      },
+      {
+        "name": "StatCard",
+        "react": "react/src/components/stat-card.tsx"
+      },
+      {
+        "name": "Charts",
+        "react": "react/src/components/charts.tsx"
+      },
+      {
+        "name": "Table",
+        "react": "react/src/components/table.tsx"
+      },
+      {
+        "name": "Primitives",
+        "react": "react/src/components/primitives.tsx"
+      },
+      {
+        "name": "Container",
+        "react": "react/src/components/container.tsx"
+      }
+    ],
+    "templates": [
+      {
+        "name": "Dashboard",
+        "route": "/"
+      },
+      {
+        "name": "Campaign",
+        "route": "/campaign"
+      },
+      {
+        "name": "Social",
+        "route": "/social"
+      },
+      {
+        "name": "Pricing",
+        "route": "/pricing"
+      },
+      {
+        "name": "Showcase",
+        "route": "/components"
+      }
+    ]
+  },
   "prompts": {
     "origin": "prompts/build.md",
     "extend": "prompts/extend.md",
     "skillVersion": "uikit-standard@1.0"
   },
-
   "media": {
     "demoUrl": "https://github.com/KernelCode/admax-uikit",
     "screenshots": [
-      { "kind": "dashboard", "src": "screenshots/dashboard.png" },
-      { "kind": "other", "src": "screenshots/components.png" }
+      {
+        "kind": "logo",
+        "src": "screenshots/logo.svg"
+      },
+      {
+        "kind": "landing",
+        "src": "screenshots/landing.png"
+      },
+      {
+        "kind": "dashboard",
+        "src": "screenshots/dashboard.png"
+      },
+      {
+        "kind": "other",
+        "src": "screenshots/dashboard-dark.png",
+        "label": "Dashboard (dark)"
+      },
+      {
+        "kind": "other",
+        "src": "screenshots/components.png",
+        "label": "Components"
+      },
+      {
+        "kind": "other",
+        "src": "screenshots/social.png",
+        "label": "Social"
+      }
     ]
   },
-
   "registry": {
     "install": "npx uikit-cli new https://github.com/KernelCode/admax-uikit my-app",
     "components": "registry/index.json"
